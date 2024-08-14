@@ -1,13 +1,17 @@
 <h1>Welcome to OldTwitter</h1>
 
-OldTwitter have <%= Article.public_count %> tweets so far, and counting!
+<h3>OldTwitter have <%= Article.public_count %> tweets so far, and counting!</h3>
 
 <p>
 <table>
-  <thead> Latest Tweets 
+  <thead>
   <tr>
-    <th>
-  <% @articles.each do |article| %>
+    <th align='left', style = 'width:400px'>Latest Tweets</th>
+    <th align='right'>User</th>
+  </tr>
+  </thead>
+    <tr>
+    <th><% @articles.each do |article| %>
     <% unless article.archived? %>
       <li align='left'>
         <%= link_to article.body, article %>
@@ -15,8 +19,16 @@ OldTwitter have <%= Article.public_count %> tweets so far, and counting!
     <% end %>
   <% end %>
   </th>
+     <th><% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li align='left'>
+        <%= link_to article.body, article %>
+      </li>
+    <% end %>
+  <% end %>
+  </th> 
   </tr>
-  </thead>
+
 </table>
 </p>
 <br>
