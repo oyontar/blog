@@ -10,7 +10,7 @@ OldTwitter have <%= Article.public_count %> tweets so far, and counting!
   <% @articles.each do |article| %>
     <% unless article.archived? %>
       <li align='left'>
-        <%= link_to article.title, article %>
+        <%= link_to article.body, article %>
       </li>
     <% end %>
   <% end %>
@@ -19,6 +19,5 @@ OldTwitter have <%= Article.public_count %> tweets so far, and counting!
   </thead>
 </table>
 </p>
-<p>
+<br>
 <%= link_to "New Tweet", new_article_path %>
-</p>
