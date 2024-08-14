@@ -1,15 +1,24 @@
 <h1>Welcome to OldTwitter</h1>
 
-Our blog has <%= Article.public_count %> articles and counting!
+OldTwitter have <%= Article.public_count %> tweets so far, and counting!
 
-<ul>
+<p>
+<table>
+  <thead> Latest Tweets 
+  <tr>
+    <th>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
-      <li>
+      <li align='left'>
         <%= link_to article.title, article %>
       </li>
     <% end %>
   <% end %>
-</ul>
-
+  </th>
+  </tr>
+  </thead>
+</table>
+</p>
+<p>
 <%= link_to "New Tweet", new_article_path %>
+</p>
