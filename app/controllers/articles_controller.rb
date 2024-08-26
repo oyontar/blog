@@ -2,7 +2,8 @@ class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   
   def index
-    @articles = Article.all
+   #@articles = Article.all
+   @articles = Article.order(created_at: :asc).limit(10)
   end
 
   def show

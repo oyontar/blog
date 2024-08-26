@@ -21,8 +21,8 @@
   </th>
      <th><% @articles.each do |article| %>
     <% unless article.archived? %>
-      <li align='left'>
-        <%= link_to article.body, article %>
+      <li style='list-style-type:none;' align='left'>
+        <%= link_to article.user.email, profile_path(article.user) %>
       </li>
     <% end %>
   <% end %>
@@ -32,4 +32,6 @@
 </table>
 </p>
 <br>
+
+
 <%= link_to "New Tweet", new_article_path %>
